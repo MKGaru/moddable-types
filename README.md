@@ -47,7 +47,7 @@ mcconfig -d -m -p esp32/nodemcu
 -----------------------------------
 install (see https://dtex.github.io/j5e/tutorial-A-GETSTARTED.html)
 ```bash
-cd $MODDABLE/../
+pushd $MODDABLE/../
 git clone https://github.com/dtex/j5e
 
 # or if you use xs-dev (coming soon?)
@@ -55,6 +55,7 @@ git clone https://github.com/dtex/j5e
 
 cd j5e
 export j5e=$PWD
+popd
 ```
 edit manifest.json, add "include"
 
