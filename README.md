@@ -112,7 +112,7 @@ like this. (complete manifest.json)
 and execute command for (re)generating tsconfig.json
 
 ```bash
-mcconfig -d p esp32/nodemcu
+mcconfig -d -p esp32/nodemcu
 ```
 
 example code (for esp32/nodemcu like device)
