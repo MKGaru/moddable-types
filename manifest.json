@@ -1,0 +1,36 @@
+{
+  "platforms": {
+    "esp32/*": {
+      "typescript": {
+        "tsconfig": {
+          "compilerOptions": {
+            "paths": {
+              "embedded:io/analog": [
+                "$(MODDABLE)/../moddable-types/platform/esp32/analog"
+              ]
+            },
+            "types": [
+              "$(MODDABLE)/../moddable-types/platform/esp32/device"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "typescript": {
+    "tsconfig": {
+      "compilerOptions": {
+        "skipLibCheck": true,
+        "module": "esnext",
+        "paths": {
+          "embedded:*": [
+            "$(MODDABLE)/../moddable-types/*"
+          ]
+        },
+        "types": [
+          "$(MODDABLE)/../moddable-types/io/system"
+        ]
+      }
+    }
+  }
+}
