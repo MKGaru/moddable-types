@@ -7,6 +7,9 @@
             "paths": {
               "embedded:io/analog": [
                 "$(MODDABLE)/../moddable-types/platform/esp32/analog"
+              ],
+              "embedded:io/pwm": [
+                "$(MODDABLE)/../moddable-types/platform/esp32/pwm"
               ]
             },
             "types": [
