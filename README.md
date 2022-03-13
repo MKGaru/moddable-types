@@ -1,3 +1,6 @@
+[![](https://raw.githubusercontent.com/Moddable-OpenSource/moddable/public/documentation/assets/moddable/moddable.png)](https://github.com/Moddable-OpenSource/moddable)
+
+
 moddable-types
 ===============================
 [WIP] Moddable definitely typed Ecma TC53
