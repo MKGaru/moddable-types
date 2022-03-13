@@ -14,7 +14,7 @@ declare module "embedded:io/smbus" {
 	
 		readWord(register: number, bigEndian: boolean): number;
 	
-		readBlock(register: number, buffer: number): number;
+		readBlock(register: number, buffer: ArrayBuffer|number): ArrayBuffer;
 	
 		writeByte(register: number, byte: number): void;
 	
