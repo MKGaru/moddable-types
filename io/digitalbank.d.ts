@@ -31,6 +31,7 @@ declare module "embedded:io/digitalbank" {
 
 	class DigitalBank {
 		constructor(dictionary: DigitalBankOptions);
+		close(): void;
 		read(): number;
 		write(value: number): void;
 		get format(): string;
