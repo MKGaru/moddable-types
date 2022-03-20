@@ -122,10 +122,7 @@ example code (for esp32/nodemcu like device)
 import LED from 'j5e/led'
 
 export default async function () {
-  const led = await new LED(new device.io.Digital({
-    pin: device.pin.led,
-    mode: device.io.Digital.Output,
-  }))
+  const led = await new LED(device.pin.led)
 
   System.setInterval(() => {
     if (led.isOn)
