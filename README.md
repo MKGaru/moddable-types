@@ -69,6 +69,34 @@ and generate d.ts
 ```bash
 tsc $j5e/lib/**/*.js --declaration --allowJs --emitDeclarationOnly --outDir $j5e/typings
 ```
+<details>
+  <summary>📓 Special notes for the j5e library</summary>
+  Many of the classes in the j5e library are asynchronous constructors, so you need a type definition patch.
+  
+  ```bash
+  cd j5e/../
+  touch replace.js
+  ```
+  edit replace.js
+  ```javascript
+  module.exports = {
+    files: 'j5e/typings/**/index.d.ts',
+    from: /^export default (.+);$/m,
+    to: (match, name) => name == 'asyncClass' ? match : `export default asyncClass
+interface AsyncClass<T extends { new (...args: any[]): void }> {
+new (...args: ConstructorParameters<T>): Promise<InstanceType<T>>
+}
+declare const asyncClass: AsyncClass<typeof ${name}>
+`
+  }
+  ```
+  
+  ```bash
+  npx replace-in-file --configFile=replace.js
+  rm replace.js
+  ```
+  --------------------------------------------------
+</details>
 
 and, add "typescript/tsconfig"
 
